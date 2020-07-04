@@ -1,5 +1,5 @@
 ################################################################################################
-# 											HEADER
+#			HEADER
 #
 # AUTOR:
 #	Stenio Silveira <stenioas@gmail.com>
@@ -33,11 +33,11 @@ import calendar
 
 # DADOS DA EMPRESA
 
-company_url_name = "hotel-meireles"
-company_name = "HOTEL MEIRELES"
-num_embratur = "06.091487.20.0001-6"
-num_of_rooms = "23"
-num_of_beds = "58"
+company_url_name = "0"
+company_name = "0"
+num_embratur = "0"
+num_of_rooms = "0"
+num_of_beds = "0"
 
 # PARÂMETROS INICIAIS
 
