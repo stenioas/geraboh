@@ -300,13 +300,13 @@ while(contador_ocupacao <= dias_mes):
 	# TESTA O VALOR DA OCUPAÇÃO, SE NÃO EXISTIR RETORNA '0'
 
 	try:
-		elmnt = soup.find_all('div', attrs={"class": "media-body text-left w-100"})
+		elmnt = soup.find_all('td')
 		elmnt_txt = str(elmnt)
-		elmnt_ocup = elmnt_txt.split(" ")[172]
-		if len(elmnt_ocup) == 11:
-			ocupacao = int(elmnt_ocup[4:5])
+		elmnt_ocup = elmnt_txt.split(">")[7]
+		if len(elmnt_ocup) == 5:
+			ocupacao = int(elmnt_ocup[0:1])
 		else:
-			ocupacao = int(elmnt_ocup[4:6])
+			ocupacao = int(elmnt_ocup[0:2])
 	except Exception:
 		ocupacao = 0
 
