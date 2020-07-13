@@ -41,7 +41,7 @@ num_of_beds = "0"
 
 # PARÂMETROS INICIAIS
 
-app_version = "1.0"
+app_version = "- v2.0 -"
 url_login = "https://pms.hospedin.com/login"
 sistema = str(platform.system())
 limpa_tela = ""
@@ -59,6 +59,7 @@ def bem_vindo():
 	print("- BEM VINDO AO GERA-BOH - ".center(80))
 	print("Script para Automatização do BOH".center(80))
 	print("- HOSPEDIN -".center(80))
+	print(app_version.center(80))
 	print("="*80)
 	print()
 
