@@ -2,7 +2,7 @@
 #			HEADER
 #
 # AUTOR:
-#	Stenio Silveira <stenioas@gmail.com>
+#	Stenio Almeida <stenioas@gmail.com>
 # NOME DA APLICAÇÃO:
 #	gera_boh
 # VERSÃO:
@@ -106,7 +106,7 @@ br["user[email]"] = user
 br["user[password]"] = pwd
 br.submit()
 
-# 	INICIALIZA A PORCENTAGEM DE PROGRESSO
+# INICIALIZA A PORCENTAGEM DE PROGRESSO
 
 pbar = int(0)
 def pbarr_update(x, y):
