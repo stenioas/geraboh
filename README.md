@@ -5,7 +5,7 @@
 <h3 align="center">
 	BOH - <a href="https://hospedin.com/">Hospedin</a>
 </h3>
-<p align="center">Um simples script python que utiliza web scraping para coletar dados de um PMS online e gerar um boletim de ocupação hoteleira de hotéis e pousadas.</p>
+<p align="center">Um simples script python que utiliza web scraping para coletar dados de um PMS online e gerar o boletim de ocupação hoteleira(BOH).</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Maintained%3F-No-red?style=for-the-badge">
