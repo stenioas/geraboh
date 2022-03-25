@@ -59,19 +59,6 @@ leitos=118
 cadastro_mtur=123456789012345
 ```
 
-##### **ATRIBUTOS DO ESTABELECIMENTO**
-
-| Atributo      | Descrição                                                                                                                                |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| nome          | O nome do estabelecimento, ex: `Meu Hotel`.                                                                                              |
-| nome_na_url   | O valor desse atributo está descrito na URL do Hospedin, após o login ser efetuado, ex: https://pms.hospedin.com/nome-do-hotel-aqui.     |
-| distrito      | Distrito/Bairro da localização do estabelecimento.                                                                                       |
-| municipio     | Município/Cidade da localização do estabelecimento.                                                                                      |
-| uf            | Estado da localização do estabelecimento.                                                                                                |
-| uhs           | O total de unidades hoteleiras que o estabelecimento possui.                                                                             |
-| leitos        | O total de leitos que o estabelecimento suporta.                                                                                         |
-| cadastro_mtur | Número de cadastro junto ao Ministério do Turismo. Esse atributo deve ser preenchido com apenas números, sem outros tipos de caracteres. |
-
 #### **Login Automático**
 
 > **!!! ATENÇÃO !!!** O usuário utilizado para realizar o login automático deve ter as suas pemissões configuradas apenas para este propósito, visto que as credencias ficarão expostas neste arquivo, evitando acesso indesejado ao sistema!!!
@@ -87,10 +74,18 @@ usuario=usuario@email.com.br
 senha=123456
 ```
 
-##### **ATRIBUTOS DE CONFIGURAÇÃO**
+##### **ATRIBUTOS**
 
-| Atributo | Descrição                                                                                                   |
-| -------- | ----------------------------------------------------------------------------------------------------------- |
-| auto     | Define se será solicitado usuário e senha sempre que executar a aplicação. Valores permitidos `on` e `off`. |
-| usuario  | E-mail de login do usuário que será utilizado                                                               |
-| senha    | Senha de login do usuário que será utilizado                                                                |
+| Atributo      | Descrição                                                                                                                                |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| nome          | O nome do estabelecimento, ex: `Meu Hotel`.                                                                                              |
+| nome_na_url   | O valor desse atributo está descrito na URL do Hospedin, após o login ser efetuado, ex: https://pms.hospedin.com/**nome-do-hotel-aqui**. |
+| distrito      | Distrito/Bairro da localização do estabelecimento.                                                                                       |
+| municipio     | Município/Cidade da localização do estabelecimento.                                                                                      |
+| uf            | Estado da localização do estabelecimento.                                                                                                |
+| uhs           | O total de unidades hoteleiras que o estabelecimento possui.                                                                             |
+| leitos        | O total de leitos que o estabelecimento suporta.                                                                                         |
+| cadastro_mtur | Número de cadastro junto ao Ministério do Turismo. Esse atributo deve ser preenchido com apenas números, sem outros tipos de caracteres. |
+| auto          | Define se será solicitado usuário e senha sempre que executar a aplicação. Valores permitidos `on` e `off`.                              |
+| usuario       | E-mail de login do usuário que será utilizado                                                                                            |
+| senha         | Senha de login do usuário que será utilizado                                                                                             |
