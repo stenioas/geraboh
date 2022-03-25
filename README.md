@@ -1,74 +1,96 @@
-<h1 align="center">
-  geraboh
-</h1>
+<h1>geraboh</h1>
 
-<h3 align="center">
-	BOH - <a href="https://hospedin.com/">Hospedin</a>
-</h3>
-<p align="center">Um simples script python que utiliza web scraping para coletar dados de um PMS online e gerar o boletim de ocupação hoteleira(BOH).</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Maintained%3F-No-red?style=for-the-badge">
-  <img src="https://img.shields.io/github/license/stenioas/malpi?style=for-the-badge">
-  <img src="https://img.shields.io/github/issues/stenioas/malpi?color=violet&style=for-the-badge">
-  <img src="https://img.shields.io/github/stars/stenioas/malpi?style=for-the-badge">
+<p>
+  <img src="https://img.shields.io/badge/maintained%3F-Yes-339933?style=flat-square">&nbsp;<img src="https://img.shields.io/github/license/stenioas/malpi?style=flat-square">&nbsp;<img src="https://img.shields.io/github/issues/stenioas/malpi?color=violet&style=flat-square">&nbsp;<img src="https://img.shields.io/github/stars/stenioas/malpi?style=flat-square">
 </p>
 
-## Notas
-* Atualmente o script só funciona em sistemas Windows.
+<samp>Um script python que gera o Boletim de Ocupação Hoteleira(BOH) para hotéis e pousadas que utilizam o sistema <a href="https://www.hospedin.com">Hospedin</a>.</samp>
 
-## Pré-requisitos
+> **ATENÇÃO!!!**
+>
+> Atualmente o script é compatível apenas com plataformas Windows.
 
-- Uma conexão com a internet funcionando.
-- Ter a última versão do [Python](https://www.python.org/) instalada.
-- Todas as libs necessárias instaladas.
-- Ter um conta Hospedin válida.
+### PRÉ-REQUISITOS
 
-##### Libs necessárias:
+- Conexão com a internet.
+- Última versão do Python, você pode baixá-lo [aqui](https://www.python.org/).
+- Todas as dependências abaixo satisfeitas.
+
+### DEPENDÊNCIAS
+
 - beautifulsoup4
 - mechanize
 - pywin32
 - openpyxl
 
-##### Execute o comando abaixo para instalar todas as libs:
+### INSTALANDO
 
-	pip install beautifulsoup4 mechanize pywin32 openpyxl
+**1.** Com o python já instalado, abra um prompt de comando do windows(cmd).
 
-## Obtendo o script
+**2.** Atualize o gerenciador de pacotes com o comando abaixo:
 
-### git
-	git clone https://github.com/stenioas/geraboh
+    python -m pip install --upgrade pip
 
-## Como usar
+**3.** Instale as dependências com o comando abaixo:
 
-### Primeira etapa
+    pip install beautifulsoup4 mechanize pywin32 openpyxl
 
-Editar o arquivo `gera-boh.py` e preencher a sessão abaixo com os dados corretos do hotel/pousada:
+**4.** Baixe o arquivo zip do projeto [aqui](https://github.com/stenioas/geraboh/archive/refs/heads/master.zip).
 
-    # DADOS DA EMPRESA
+**5.** Extraia o arquivo baixado onde achar melhor.
 
-    company_url_name = "0"
-    company_name = "0"
-    num_embratur = "0"
-    num_of_rooms = "0"
-    num_of_beds = "0"
-Exemplo:
+### CONFIGURANDO
 
-	# DADOS DA EMPRESA
-	
-    company_url_name = "https://pms.hospedin.com/nome-do-seu-hotel-ou-pousada-aqui"
-    company_name = "nome-do-seu-hotel-ou-pousada-aqui"
-    num_embratur = "numero-embratur-aqui"
-    num_of_rooms = "total-de-quartos-aqui"
-    num_of_beds = "numero-de-leitos-aqui"
+#### **Dados do Estabelecimento**
 
-### Segunda etapa
+Utilizando o editor de texto de sua preferência, edite o arquivo `settings.ini`, que está dentro do diretório conf, e preencha a sessão **"ESTABELECIMENTO"** seguindo o padrão do exemplo abaixo:
 
-Após todos os requisitos atendidos e a primeira etapa realizada de forma correta você deve iniciar o prompt de comando do Windows, acessar o diretório do projeto e executar o comando abaixo:
+Exemplo para configuração do estabelecimento:
 
-	python gera-boh.py
+```ini
+[ESTABELECIMENTO]
+nome=Meu Hotel
+nome_na_url=meu-hotel
+distrito=MEIRELES
+municipio=FORTALEZA
+uf=CE
+uhs=40
+leitos=118
+cadastro_mtur=123456789012345
+```
 
-Após a execução do comando sem nenhum retorno de erro você deve digitar seu email e senha utilizados para efetuar login na plataforma do Hospedin, e em seguida digitar o mês desejado(2 dígitos) e ano desejado(4 dígitos) para gerar o BOH.
+##### **ATRIBUTOS DO ESTABELECIMENTO**
 
-<h2 align="center">Obrigado por dedicar seu tempo a conhecer o meu projeto!</h2>
+| Atributo      | Descrição                                                                                                                                |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| nome          | O nome do estabelecimento, ex: `Meu Hotel`.                                                                                              |
+| nome_na_url   | O valor desse atributo está descrito na URL do Hospedin, após o login ser efetuado, ex: https://pms.hospedin.com/nome-do-hotel-aqui.     |
+| distrito      | Distrito/Bairro da localização do estabelecimento.                                                                                       |
+| municipio     | Município/Cidade da localização do estabelecimento.                                                                                      |
+| uf            | Estado da localização do estabelecimento.                                                                                                |
+| uhs           | O total de unidades hoteleiras que o estabelecimento possui.                                                                             |
+| leitos        | O total de leitos que o estabelecimento suporta.                                                                                         |
+| cadastro_mtur | Número de cadastro junto ao Ministério do Turismo. Esse atributo deve ser preenchido com apenas números, sem outros tipos de caracteres. |
 
+#### **Login Automático**
+
+> **!!! ATENÇÃO !!!** O usuário utilizado para realizar o login automático deve ter as suas pemissões configuradas apenas para este propósito, visto que as credencias ficarão expostas neste arquivo, evitando acesso indesejado ao sistema!!!
+
+Mais uma vez, utilizando o editor de texto de sua preferência, edite o arquivo `settings.ini`, que está dentro do diretório conf, e preencha a sessão **"LOGIN"** seguindo o padrão do exemplo abaixo:
+
+Exemplo para configuração do login automático:
+
+```ini
+[LOGIN]
+auto=on
+usuario=usuario@email.com.br
+senha=123456
+```
+
+##### **ATRIBUTOS DE CONFIGURAÇÃO**
+
+| Atributo | Descrição                                                                                                   |
+| -------- | ----------------------------------------------------------------------------------------------------------- |
+| auto     | Define se será solicitado usuário e senha sempre que executar a aplicação. Valores permitidos `on` e `off`. |
+| usuario  | E-mail de login do usuário que será utilizado                                                               |
+| senha    | Senha de login do usuário que será utilizado                                                                |
